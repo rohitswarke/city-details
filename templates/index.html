@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<script>
+    $(document).ready(function() {
+        $('#city_table').DataTable({
+            
+            "sPaginationType": "bs_full"
+        });
+    } );
+
+</script>
+
+<h1>City Details Portal</h1>
+
+<form action="{{api_version_str}}/" method="get">
+    <label for="city">Enter City Name Initials:</label>
+    <input id="city" name="city" required type="text">
+    <input type="submit" value="Submit">
+</form>
+{% if searched_keyword %}
+    <br>
+    <br>
+    <h3>
+        [ {{ data['count'] }} ] Results found for searched keyword: '{{ searched_keyword }}'
+    </h3>
+    {% if data['count'] > 0 %}
+    <table class="table atble-striped" id="city_table" style="width:50%">
+        <thead>
+        <tr>
+            <th>City</th>
+            <th>Country</th>
+            <th>Population</th>
+            <th>latitude</th>
+            <th>longitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in data['cities'] %}
+        <tr>
+            <td>{{ i['city'] }}</td>
+            <td>{{ i['country'] }}</td>
+            <td>{{ i['population'] }}</td>
+            <td>{{ i['lat'] }}</td>
+            <td>{{ i['lng'] }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
