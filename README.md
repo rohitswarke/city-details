@@ -28,6 +28,8 @@
 - [Running the project](#run)
 - [Usage](#usage)
 - [Built Using](#built_using)
+- [Deployments](#deployment)
+- [UI Screenshots](#ui_screenshots)
 - [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
@@ -135,6 +137,17 @@ cd city-details
 docker build -t myapp:0.0.1 .
 docker run -p 8086:80  myapp:0.0.1
 ```
+
+## UI Screenshots <a name = "ui_screenshots"></a>
+
+### Below screenshots are of application running on AWS Docker <br/>
+### Backend MongoDB is currently running on a 3 node replica cluser on MongoDB Atlas.
+
+
+![UI-1](https://github.com/rohitswarke/city-details/blob/main/static/portal_1.PNG?raw=true) <br/>
+![UI-2](https://github.com/rohitswarke/city-details/blob/main/static/portal_3.PNG?raw=true) <br/>
+![UI-4](https://github.com/rohitswarke/city-details/blob/main/static/portal_4.PNG?raw=true) <br/>
+
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
