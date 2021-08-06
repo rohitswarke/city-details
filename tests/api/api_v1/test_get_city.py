@@ -1,4 +1,6 @@
-def test_get_city(test_client, test_input):
-    response = test_client.get("/api/cities", city='Tokyo')
-    assert response.status_code == 201
+def test_get_city(test_client, test_city):
+    response = test_client.get("/cities?city=Pune")
+    assert response.status_code == 200
     assert response.json()["count"] == 1
+    assert response.json()["cities"][0]["city"] == test_city["cities"][0]["city"]
+

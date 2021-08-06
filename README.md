@@ -25,6 +25,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Prerequisites and installation](#installation)
+- [Test case execution and coverage report](#test_cases)
 - [Running the project](#run)
 - [Usage](#usage)
 - [Built Using](#built_using)
@@ -97,7 +98,60 @@ Note :- You can skip above step if you have access of pre-loaded database.
 Add MONGODB_URL in .env file.
 
 
-## Running the project <a name = "run"></a>
+## Test case execution <a name="test_cases"></a>
+
+I'm using pytest framework to test the api calls. You just need to goto the projet directory and run pytest command.
+```
+cd city-details
+pytest
+```
+
+### Coverage report
+
+Run below pytest command alongwith --cov option to generate the coverage report
+```
+pytest --cov=city_details tests\ > coverage
+
+----------- coverage: platform win32, python 3.9.6-final-0 -----------
+Name                                                      Stmts   Miss  Cover
+-----------------------------------------------------------------------------
+city_details\__init__.py                                     39      2    95%
+city_details\__main__.py                                      3      3     0%
+city_details\__version__.py                                   2      0   100%
+city_details\api\__init__.py                                  0      0   100%
+city_details\api\api_v1\__init__.py                           0      0   100%
+city_details\api\api_v1\api.py                                9      0   100%
+city_details\api\api_v1\routes\__init__.py                    0      0   100%
+city_details\api\api_v1\routes\all_request_router.py         27      0   100%
+city_details\api\api_v1\routes\city_router.py                33      6    82%
+city_details\api\api_v1\routes\health_checker_router.py      37      9    76%
+city_details\api\api_v1\routes\ui_router.py                  34      8    76%
+city_details\core\__init__.py                                 0      0   100%
+city_details\core\config.py                                  29      6    79%
+city_details\core\custom_logging.py                          42      2    95%
+city_details\core\enhanced_json_encoder.py                   12      5    58%
+city_details\core\errors.py                                  19      8    58%
+city_details\core\interfaces.py                              11      1    91%
+city_details\core\utils.py                                   33     18    45%
+city_details\crud\__init__.py                                 0      0   100%
+city_details\crud\city.py                                    17      0   100%
+city_details\db\__init__.py                                   0      0   100%
+city_details\db\mongodb.py                                    6      0   100%
+city_details\db\mongodb_utils.py                             17      0   100%
+city_details\models\__init__.py                               0      0   100%
+city_details\models\city.py                                  23      0   100%
+city_details\models\health.py                                13      0   100%
+-----------------------------------------------------------------------------
+TOTAL                                                       406     68    83%
+
+====================================================================================================== 3 passed, 1 warning in 1.79s ======================================================================================================
+
+
+```
+
+
+
+## 🚀 Running the project <a name = "run"></a>
 
 ```
 cd city-details
