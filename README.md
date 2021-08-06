@@ -125,8 +125,16 @@ pip install city_details-0.0.1-py3-none-any.whl
 ```
 You need to put .env file on the system to start the project and connect to the MongoDB.
 
+### To build docker image
 
-To deploy this project on production, we need to run it behind gunicorn.
+The Dockerfile is also tested and is absolutely working fine.
+Run below commands to build the image locally and then bin 8086 port of docker container to 80 port on your local.
+
+```
+cd city-details
+docker build -t myapp:0.0.1 .
+docker run -p 8086:80  myapp:0.0.1
+```
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
