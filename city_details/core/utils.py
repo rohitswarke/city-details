@@ -54,7 +54,7 @@ def get_command_line_arguments():
     )
     args = parser.parse_args()
     host = args.host_address
-    port = args.port_number
+    port = int(args.port_number)
     return host, port
 
 
